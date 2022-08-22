@@ -28,18 +28,18 @@
             
             <! ******************** 内容 ******************** >
             
-            <img src = "https://chankagari.github.io/FindKagari/M0000/M0000.jpg" alt = "M0000">
+            <img src = "https://chankagari.github.io/FindKagari/map/M0000/M0000.jpg" alt = "M0000">
             
-            <div> time: <pre> 2020.03 </pre> <br> </div>
+            <div> time: 2020.03 <br> </div>
             <br>
             <div>
                 <h4> 提交答案 </h4>
-                输入 <a herf = "https://map.baidu.com/"> 百度地图 </a> 全景预览 网址中 <pre> #panoid= </pre> 后的字符串以提交答案. <br>
+                输入 <a herf = "https://map.baidu.com/"> 百度地图 </a> 全景预览 网址中 #panoid= 后的字符串以提交答案. <br>
                 <input type = "ans" id = "ans" style = "width: 42%;">
-                <button onclick = "check()"> OK </button>
+                <button onclick = "checkans()"> OK </button>
                 <br>
                 <script>
-                    function check () {
+                    function checkans () {
                         if (document.getElementById("ans").value == "09002200121902051556492172L") {
                             alert("Accepted.");
                         } 
@@ -53,10 +53,10 @@
                 <h4> 提示 </h4>
                 以汉语拼音方式, 输入图片所在城市以判断你是否找对了大致地点 (请不要滥用这个功能). <br>
                 <input type = "city" id = "city" style = "width: 15%;">
-                <button onclick = "checkans()"> OK </button>
+                <button onclick = "checkhink()"> OK </button>
                 <br>
                 <script>
-                    function check () {
+                    function checkhink () {
                         if (document.getElementById("city").value == "Beijing") {
                             alert("Correct Area.");
                         } 
