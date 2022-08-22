@@ -35,37 +35,53 @@
             <div>
                 <h4> 提交答案 </h4>
                 输入百度地图全景预览网址中 #panoid= 后的字符串以提交答案. <br>
-                <input type = "ans" id = "ans" style = "width: 42%;">
+                <input type = "text" id = "ans" style = "width: 42%;">
                 <button onclick = "checkans()"> OK </button>
                 <br>
                 <script>
                     function checkans () {
-                        if (document.getElementById("ans").value == "09002200121902051556492172L") {
+                        if (document.getElementById("ans").value == "09002200121902051556492172L") 
                             alert("Accepted.");
-                        } 
-                        else {
+                        else 
                             alert("Wrong Answer.");
-                        }
                     }
                 </script>
             </div>
-            <div>
+            <div id = "hink">
                 <h4> 提示 </h4>
                 以汉语拼音方式, 输入图片所在城市以判断你是否找对了大致地点 (请不要滥用这个功能). <br>
-                <input type = "city" id = "city" style = "width: 15%;">
+                <input type = "text" id = "city" style = "width: 15%;">
                 <button onclick = "checkhink()"> OK </button>
                 <br>
                 <script>
                     function checkhink () {
-                        if (document.getElementById("city").value == "Beijing") {
+                        if (document.getElementById("city").value == "Beijing") 
                             alert("Correct Area.");
-                        } 
-                        else {
+                        else 
                             alert("Wrong Area.");
-                        }
                     }
                 </script>
             </div>
+            
+            <script>
+                function checkall () {
+                        if (document.getElementById("ans").value == "09002200121902051556492172L") 
+                            alert("Accepted.");
+                        else {
+                            if (document.getElementById("city").value == "Beijing")
+                                alert("Wrong Answer;\nCorrect Area.");
+                            else
+                                alert("Wrong Answer;\nWrong Area.");
+                        }
+                }
+                document.onkeydown = function(e) {
+                    e = e || window.event;
+                    if (e.keyCode == 13) {
+                        checkall();
+                        return false;
+                    }
+                }
+            </script>
         </div>
     </body>
 </html>
